@@ -30,6 +30,7 @@ def main():
     AlerterState.initialize()
 
     print("Hello World!") # DO NOT MERGE THIS LINE
+    print("Hello World!") # DO NOT MERGE THIS LINE
 
     signal.signal(signal.SIGINT, sigint)
     signal.signal(signal.SIGUSR1, send_test_mail)
