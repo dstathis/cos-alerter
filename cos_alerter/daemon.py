@@ -29,6 +29,8 @@ def main():
     """Main method for COS Alerter."""
     AlerterState.initialize()
 
+    print("Hello World!") # DO NOT MERGE THIS LINE
+
     signal.signal(signal.SIGINT, sigint)
     signal.signal(signal.SIGUSR1, send_test_mail)
 
