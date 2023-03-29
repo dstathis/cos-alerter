@@ -1,6 +1,9 @@
 name: Pull Requests
 
 on:
+  push:
+    brnaches:
+      - main
   pull_request:
     branches:
       - main
