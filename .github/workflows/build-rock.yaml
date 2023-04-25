@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    uses: canonical/observability/.github/workflows/build-rock.yaml@main
+    uses: canonical/observability/.github/workflows/build-rock.yaml@more-tags
     secrets: inherit
     with:
       rock-name: cos-alerter
