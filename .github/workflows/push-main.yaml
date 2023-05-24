@@ -46,12 +46,12 @@ jobs:
         run: |
           echo "${{ needs.version-check.outputs.new_version }}"
           python3 -m build
-      #- name: Upload
-      #  run: |
-      #    python3 -m twine upload \
-      #    --verbose --non-interactive \
-      #    --username __token__ --password ${{ secrets.PYPI_TOKEN }} \
-      #    dist/*
+      - name: Upload
+        run: |
+          python3 -m twine upload \
+          --verbose --non-interactive \
+          --username __token__ --password ${{ secrets.PYPI_TOKEN }} \
+          dist/*
       - name: Tag
         uses: mathieudutour/github-tag-action@v6.1
         with:
