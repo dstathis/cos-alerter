@@ -24,8 +24,10 @@ jobs:
           match=$(echo ${tags} | grep -w -c ${version} | cat)
           if [ "${match}" == "0" ]; then
             echo "new_version=true" >> "${GITHUB_OUTPUT}"
+            echo "new_version=true"
           else
             echo "new_version=false" >> "${GITHUB_OUTPUT}"
+            echo "new_version=false"
           fi
       - name: blah
         run: |
