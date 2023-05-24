@@ -10,7 +10,7 @@ jobs:
   version-check:
     runs-on: ubuntu-latest
     outputs:
-      new_version: ${{ steps.check-version.new_version }}
+      new_version: ${{ steps.check-version.outputs.new_version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
