@@ -18,6 +18,7 @@ jobs:
           fetch-depth: 0
       - name: Check Version
         id: check-version
+        continue-on-error: true
         run: |
           version=$(grep -P -o 'version = "\d+\.\d+\.\d+"' pyproject.toml | grep -P -o '\d+\.\d+\.\d+')
           tags=$(git tag -l '*.*.*')
