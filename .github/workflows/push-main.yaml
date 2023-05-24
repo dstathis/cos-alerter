@@ -21,7 +21,7 @@ jobs:
         run: |
           version=$(grep -P -o 'version = "\d+\.\d+\.\d+"' pyproject.toml | grep -P -o '\d+\.\d+\.\d+')
           tags=$(git tag -l '*.*.*')
-          echo ${version} | grep -w -q ${version}
+          echo ${tags} | grep -w -q ${version}
 
   python-package:
     runs-on: ubuntu-latest
