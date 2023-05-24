@@ -22,8 +22,8 @@ jobs:
         run: |
           version=$(grep -P -o 'version = "\d+\.\d+\.\d+"' pyproject.toml | grep -P -o '\d+\.\d+\.\d+')
           tags=$(git tag -l '*.*.*')
-          echo ${tags} | grep -w -q ${version}
-          if [ $? != 0 ]; then
+          match=$(echo ${tags} | grep -w -c ${version} | cat)
+          if [ "${match}" == "0" ]; then
             echo "new_version=true" >> "${GITHUB_OUTPUT}"
           else
             echo "new_version=false" >> "${GITHUB_OUTPUT}"
