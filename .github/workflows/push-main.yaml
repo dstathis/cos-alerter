@@ -40,7 +40,9 @@ jobs:
       - name: Install Build Tools
         run: pip install --upgrade build twine
       - name: Build
-        run: python3 -m build
+        run: |
+          echo "${{ needs.version-check.outputs.new_version }}"
+          python3 -m build
       #- name: Upload
       #  run: |
       #    python3 -m twine upload \
